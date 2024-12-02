@@ -24,5 +24,8 @@ jobs:
             - name: installingJq
               run: sudo apt install jq
             - name: GetSecrets
-              run: curl --header "X-Vault-Token:hvs.RbrvDUd9XEOgya1WiZFXlt6o" --request GET https://6333-94-156-116-244.ngrok-free.app/v1/secret/data/vaultData | jq -r ".data.data"
+              env:
+                  VAULT_ADDRESS: ${{ secrets.VAULT_ADDRESS }} 
+                  VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }} 
+              run: curl --header "X-Vault-Token:$VAULT_TOKEN" --request GET $VAULT_ADDRESS/v1/secret/data/vaultData | jq -r ".data.data"
               
