@@ -10,9 +10,10 @@ jobs:
               run: sudo apt install g++
             - name: installMake
               run: sudo apt install make
-            - name: Compile
+            - name: CleanObj
               run: make clean
-                   make all
+            - name: Compile
+              run: make all
             - name: FileSettings
               run: chmod +x ./main
             - name: RunTest
