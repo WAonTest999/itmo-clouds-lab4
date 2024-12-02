@@ -1,0 +1,16 @@
+name: Check
+on: push
+jobs:
+    Test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: installGCC
+              run: sudo apt install g++
+            - name: installMake
+              run: sudo apt install make
+            - name: Compile
+              run: make
+            - name: FileSettings
+              run: chmod +x ./main
+            - name: RunTest
+              run: ./main
