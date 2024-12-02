@@ -19,6 +19,8 @@ jobs:
     Vault:
         runs-on: ubuntu-latest
         steps:
+            - name: installingJq
+              run: sudo apt install jq
             - name: GetSecrets
-              run: curl --header "X-Vault-Token:hvs.RbrvDUd9XEOgya1WiZFXlt6o" --request GET https://6333-94-156-116-244.ngrok-free.app/v1/secret/data/vaultData
+              run: curl --header "X-Vault-Token:hvs.RbrvDUd9XEOgya1WiZFXlt6o" --request GET https://6333-94-156-116-244.ngrok-free.app/v1/secret/data/vaultData | jq -r ".data.data"
               
