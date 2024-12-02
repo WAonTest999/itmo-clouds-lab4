@@ -7,3 +7,5 @@ obj/main.o: src/main.cpp
 
 obj/test.o: src/test.cpp
 	g++ -c src/test.cpp -o obj/test.o
+clean:
+	rm ./obj/*
