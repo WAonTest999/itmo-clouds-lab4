@@ -11,7 +11,7 @@ jobs:
             - name: installTree
               run: sudo apt install tree
             - name: showTree
-              run: tree .//
+              run: tree ../
             - name: Compile
               run: make
             - name: FileSettings
