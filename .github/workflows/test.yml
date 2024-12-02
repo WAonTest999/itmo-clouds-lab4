@@ -11,7 +11,8 @@ jobs:
             - name: installMake
               run: sudo apt install make
             - name: Compile
-              run: make
+              run: make clean
+                   make all
             - name: FileSettings
               run: chmod +x ./main
             - name: RunTest
