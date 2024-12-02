@@ -1,9 +1,9 @@
-all: ./obj/main.o ./obj/test.o
-	g++ ./obj/main.o ./obj/test.o -o main
+all: obj/main.o obj/test.o
+	g++ obj/main.o obj/test.o -o ./main
 
 
-./obj/main.o: ./src/main.cpp
-	g++ -c src/main.cpp -o ./obj/main.o
+obj/main.o: src/main.cpp
+	g++ -c src/main.cpp -o obj/main.o
 
-./obj/test.o: ./src/test.cpp
-	g++ -c ./src/test.cpp -o ./obj/test.o
+obj/test.o: src/test.cpp
+	g++ -c src/test.cpp -o obj/test.o
