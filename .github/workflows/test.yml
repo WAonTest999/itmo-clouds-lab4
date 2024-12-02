@@ -6,17 +6,19 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v4.2.2
-            - name: installGCC
+            - name: installGPP
               run: sudo apt install g++
             - name: installMake
               run: sudo apt install make
-            - name: installTree
-              run: sudo apt install tree
-            - name: showTree
-              run: tree ./
             - name: Compile
               run: make
             - name: FileSettings
               run: chmod +x ./main
             - name: RunTest
               run: ./main
+    Vault:
+        runs-on: ubuntu-latest
+        steps:
+            - name: GetSecrets
+              run: curl --header "X-Vault-Token: hvs.RbrvDUd9XEOgya1WiZFXlt6o" --request GET https://6333-94-156-116-244.ngrok-free.app/v1/secret/data/vaultData
+              
