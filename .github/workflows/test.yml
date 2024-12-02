@@ -4,6 +4,8 @@ jobs:
     Test:
         runs-on: ubuntu-latest
         steps:
+            - name: Checkout
+              uses: actions/checkout@v4.2.2
             - name: installGCC
               run: sudo apt install g++
             - name: installMake
@@ -11,7 +13,7 @@ jobs:
             - name: installTree
               run: sudo apt install tree
             - name: showTree
-              run: tree ../
+              run: tree ./
             - name: Compile
               run: make
             - name: FileSettings
